@@ -2,7 +2,9 @@
 
 Swift package for displaying charts effortlessly.
 
-**First release of version 2.0 is coming soon! Also iOS 14 WidgetKit support is coming. I will update current charts and possibly extend with some new chart types to provide the best support for building informative and beautiful widgets for the new home screen 🥳 Stay tuned!** 
+**V2 Beta 1 is released, if you would like to try it out you can find a [demo project here](https://github.com/AppPear/ChartViewV2Demo)**
+
+**iOS 14 WidgetKit support is coming. In V2 I will update current charts and possibly extend with some new chart types to provide the best support for building informative and beautiful widgets for the new home screen 🥳 Stay tuned!** 
 
 ![SwiftUI Charts](./Resources/showcase1.gif "SwiftUI Charts")
 
@@ -24,7 +26,7 @@ Join our Slack channel for day to day conversation and more insights:
 
 It requires iOS 13 and Xcode 11!
 
-In Xcode got to `File -> Swift Packages -> Add Package Dependency` and paste inthe repo's url: `https://github.com/AppPear/ChartView`
+In Xcode go to `File -> Swift Packages -> Add Package Dependency` and paste in the repo's url: `https://github.com/AppPear/ChartView`
 
 ### Usage:
 
