@@ -24,6 +24,7 @@ public struct BarChartView : View {
     @State private var touchLocation: CGFloat = -1.0
     @State private var showValue: Bool = false
     @State private var showLabelValue: Bool = false
+    private var isStacked: Bool = false
     @State private var currentValue: Double = 0 {
         didSet{
             if(oldValue != self.currentValue && self.showValue) {
@@ -34,7 +35,7 @@ public struct BarChartView : View {
     var isFullWidth:Bool {
         return self.formSize == ChartForm.large
     }
-    public init(data:ChartData, title: String, legend: String? = nil, style: ChartStyle = Styles.barChartStyleOrangeLight, form: CGSize? = ChartForm.medium, dropShadow: Bool? = true, cornerImage:Image? = Image(systemName: "waveform.path.ecg"), valueSpecifier: String? = "%.1f"){
+    public init(data:ChartData, title: String, legend: String? = nil, style: ChartStyle = Styles.barChartStyleOrangeLight, form: CGSize? = ChartForm.medium, isStacked: Bool, dropShadow: Bool? = true, cornerImage:Image? = Image(systemName: "waveform.path.ecg"), valueSpecifier: String? = "%.1f"){
         self.data = data
         self.title = title
         self.legend = legend
@@ -44,6 +45,7 @@ public struct BarChartView : View {
         self.dropShadow = dropShadow!
         self.cornerImage = cornerImage!
         self.valueSpecifier = valueSpecifier!
+        self.isStacked = isStacked
     }
     
     public var body: some View {
@@ -77,7 +79,8 @@ public struct BarChartView : View {
                 }.padding()
                 BarChartRow(data: data.points.map{$0.1},
                             accentColor: self.colorScheme == .dark ? self.darkModeStyle.accentColor : self.style.accentColor,
-                            gradient: self.colorScheme == .dark ? self.darkModeStyle.gradientColor : self.style.gradientColor,
+                            secondaryColor: Colors.GradientUpperBlue, gradient: self.colorScheme == .dark ? self.darkModeStyle.gradientColor : self.style.gradientColor,
+                            isStacked: self.isStacked,
                             touchLocation: self.$touchLocation)
                     .padding(.leading, 16.0)
                 if self.legend != nil  && self.formSize == ChartForm.medium && !self.showLabelValue{
@@ -140,7 +143,7 @@ public struct BarChartView : View {
 #if DEBUG
 struct ChartView_Previews : PreviewProvider {
     static var previews: some View {
-        BarChartView(data: ChartData(values: [("A moral compass", 5), ("What you most cherish", 9), ("An ethical code", 13), ("An ethical code", 13), ("A set of guiding priciples", 2)]), title: "How do you think about personal values?", legend: "Quarterly", form: ChartForm.extraLarge) // legend is optional
+        BarChartView(data: ChartData(values: [("A moral compass", 5), ("What you most cherish", 9), ("An ethical code", 13), ("An ethical code", 13), ("A set of guiding priciples", 2)]), title: "How do you think about personal values?", legend: "Quarterly", form: ChartForm.extraLarge, isStacked: true) // legend is optional
     }
 }
 #endif
