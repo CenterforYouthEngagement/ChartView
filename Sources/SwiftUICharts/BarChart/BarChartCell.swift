@@ -27,7 +27,7 @@ public struct BarChartCell : View {
     @State var secondScaleValue: Double = 0
     @Binding var touchLocation: CGFloat
     public var body: some View {
-        if !stacked
+        if stacked = false
         {
             ZStack {
                 RoundedRectangle(cornerRadius: 4)
