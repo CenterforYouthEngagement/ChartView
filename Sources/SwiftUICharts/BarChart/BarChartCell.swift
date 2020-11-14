@@ -20,14 +20,14 @@ public struct BarChartCell : View {
     var accentColor: Color
     var secondAccentColor: Color
     var gradient: GradientColor?
-    var stacked: Bool
+    var stacked: Bool?
 
     
     @State var scaleValue: Double = 0
     @State var secondScaleValue: Double = 0
     @Binding var touchLocation: CGFloat
     public var body: some View {
-        if !stacked
+        if stacked != true
         {
             ZStack {
                 RoundedRectangle(cornerRadius: 4)
