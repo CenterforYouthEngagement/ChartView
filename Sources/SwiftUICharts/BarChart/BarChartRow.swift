@@ -13,7 +13,7 @@ public struct BarChartRow : View {
     var accentColor: Color
     var secondaryColor: Color
     var gradient: GradientColor?
-    var isStacked: Bool?
+    var isStacked: Bool
     
     var maxValue: Double {
         guard let max = data.max() else {
