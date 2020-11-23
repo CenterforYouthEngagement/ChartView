@@ -24,7 +24,7 @@ public struct BarChartView : View {
     @State private var touchLocation: CGFloat = -1.0
     @State private var showValue: Bool = false
     @State private var showLabelValue: Bool = false
-    private var isStacked: Bool?
+    private var isStacked: Bool
     @State private var currentValue: Double = 0 {
         didSet{
             if(oldValue != self.currentValue && self.showValue) {
