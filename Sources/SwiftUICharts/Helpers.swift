@@ -211,6 +211,10 @@ public class ChartData: ObservableObject, Identifiable {
     public func onlyPoints() -> [Double] {
         return self.points.map{ $0.1 }
     }
+    
+    public func getData() -> [(title: String, frequency: Double)] {
+        return self.points
+    }
 }
 
 public class MultiLineChartData: ChartData {
