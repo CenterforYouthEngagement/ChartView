@@ -212,7 +212,7 @@ public class ChartData: ObservableObject, Identifiable {
         return self.points.map{ $0.1 }
     }
     
-    public func getData() -> [(String,Double)] {
+    public func getData() -> [(title: String, frequency: Double)] {
         return self.points
     }
 }
