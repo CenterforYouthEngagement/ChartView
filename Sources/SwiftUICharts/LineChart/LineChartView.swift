@@ -38,7 +38,7 @@ public struct LineChartView: View {
                 legend: String? = nil,
                 style: ChartStyle = Styles.lineChartStyleOne,
                 form: CGSize? = ChartForm.medium,
-                rateValue: Int? = 14,
+                rateValue: Int? = nil,
                 dropShadow: Bool? = true,
                 valueSpecifier: String? = "%.1f") {
         
@@ -58,7 +58,7 @@ public struct LineChartView: View {
         ZStack(alignment: .center){
             RoundedRectangle(cornerRadius: 20)
                 .fill(self.colorScheme == .dark ? self.darkModeStyle.backgroundColor : self.style.backgroundColor)
-                .frame(width: frame.width, height: 240, alignment: .center)
+                .frame(width: frame.width, height: frame.height*2, alignment: .center)
                 .shadow(color: self.style.dropShadowColor, radius: self.dropShadow ? 8 : 0)
             VStack(alignment: .leading){
                 if(!self.showIndicatorDot){
