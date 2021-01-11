@@ -16,7 +16,7 @@ public struct FullScreenBarChartView : View {
     var maxValue: Double
     @State private var touchLocation: CGFloat = -1.0
     
-    public init(data: [Double], accentColor: Color, secondaryColor: Color, gradient: GradientColor?, isStacked: Bool, touchLocation: CGFloat = -1.0) {
+    public init(data: [Double], accentColor: Color, secondaryColor: Color, gradient: GradientColor?, isStacked: Bool = false, touchLocation: CGFloat = -1.0) {
         self.data = data
         self.accentColor = accentColor
         self.secondaryColor = secondaryColor
