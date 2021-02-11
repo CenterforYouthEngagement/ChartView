@@ -1,5 +1,5 @@
 //
-//  FullScreenLineChart.swift
+//  FullScreenLineChartView.swift
 //  
 //
 //  Created by Joshua Holme on 2/9/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FullScreenLineChart: View {
+struct FullScreenLineChartView: View {
     var data: [Double]
     var title: String
     var legend: String?
@@ -25,8 +25,8 @@ struct FullScreenLineChart: View {
     }
 }
 
-//struct FullScreenLineChart_Previews: PreviewProvider {
+//struct FullScreenLineChartView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        FullScreenLineChart(data: <#[Double]#>, title: <#String#>, style: <#ChartStyle#>)
+//        FullScreenLineChartView(data: <#[Double]#>, title: <#String#>, style: <#ChartStyle#>)
 //    }
 //}
