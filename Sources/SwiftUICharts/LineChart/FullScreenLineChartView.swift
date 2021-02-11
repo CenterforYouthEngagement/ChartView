@@ -1,6 +1,6 @@
 //
 //  FullScreenLineChartView.swift
-//  
+//
 //
 //  Created by Joshua Holme on 2/9/21.
 //
@@ -15,6 +15,16 @@ struct FullScreenLineChartView: View {
     var rateValue: Int?
     var dropShadow: Bool?
     var valueSpecifier: String?
+    
+    public init(data: [Double], title: String, legend: String?, style: ChartStyle, rateValue: Int?, dropShadow: Bool?, valueSpecifier: String?) {
+        self.data = data
+        self.title = title
+        self.legend = legend
+        self.style = style
+        self.rateValue = rateValue
+        self.dropShadow = dropShadow
+        self.valueSpecifier = valueSpecifier
+    }
     
     var body: some View {
         GeometryReader { geometry in
